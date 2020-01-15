@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navcol-1"><img src="{{url(asset("assets/img/logo.png"))}}" style="width: 100px;margin: -20px;margin-left: 0;padding-right: 30px;" alt="logo">
             <ul class="nav navbar-nav">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Penerimaan Siswa Baru</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Siswa</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="{{url("dashboard/siswa")}}">Siswa</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pegawai</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Kelas</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Absensi</a></li>
