@@ -28,6 +28,8 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Kelas</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Absensi</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Nilai</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Paket layanan</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pengaturan Sekolah</a></li>
             </ul>
         </div><a class="btn btn-primary ml-auto" role="button" href="#" style="background-color: rgb(42,35,35);">Keluar</a></div>
 </nav>
