@@ -31,7 +31,7 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Paket layanan</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="#">Pengaturan Sekolah</a></li>
             </ul>
-        </div><a class="btn btn-primary ml-auto" role="button" href="#" style="background-color: rgb(42,35,35);">Keluar</a></div>
+        </div><a class="btn btn-primary ml-auto" role="button" href="{{url("logout")}}" style="background-color: rgb(42,35,35);">Keluar</a></div>
 </nav>
 <section class="features-icons bg-light text-center" style="padding-top: 20px;padding-bottom: 20px;">
     <div class="container">@yield('content')</div>
