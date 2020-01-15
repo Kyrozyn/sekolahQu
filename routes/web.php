@@ -21,4 +21,6 @@ Route::post('user/signup', 'User@signup');
 Route::match(['get','post'],'/daftar', 'User@daftar');
 Route::group(['middleware' => 'usersession'], function () {
     Route::get('/dashboard', 'Dashboard@index');
+    Route::resource('dashboard/siswa', 'Admin\\siswaController');
 });
+

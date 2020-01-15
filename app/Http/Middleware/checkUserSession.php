@@ -16,7 +16,7 @@ class checkUserSession
     public function handle($request, Closure $next)
     {
         if (!$request->session()->exists('user')) {
-            return redirect('/login')->with('error','Maaf anda belum login!');
+            return redirect('/masuk')->with('error','Maaf anda belum login!');
         }
         return $next($request);
     }

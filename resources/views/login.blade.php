@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>SekolahQu</title>
     <meta name="description" content="Aplikasi Manajemen Sekolah Berbasis Cloud">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url(asset('assets/bootstrap/css/bootstrap.min.css'))}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="{{url(asset("assets/css/styles.min.css"))}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
 <body style="background: url('assets/img/wp.jpg');/*background-size: cover;">
     <form id="form" method="post" action="{{url('/user/login')}}" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;">
         @csrf
-        <div><img class="rounded img-fluid" id="image" style="width: auto;height: auto;margin-left: 30px;" src="assets/img/logo.png"></div>
+        <div><img class="rounded img-fluid" id="image" style="width: auto;height: auto;margin-left: 30px;" src="{{url(asset("assets/img/logo.png"))}}"></div>
         @if (session('error'))
         <div class="alert alert-danger" role="alert">
             {{session('error')}}
@@ -29,7 +29,7 @@
             href="#">Lupa kata sandi anda?</a></form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    <script src="{{url(asset("assets/js/script.min.js"))}}"></script>
 </body>
 
 </html>
