@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navcol-1"><img src="assets/img/logo.png" style="width: 100px;margin: -20px;margin-left: 0;"><a class="btn btn-primary ml-auto" role="button" href="{{url('masuk')}}">Masuk Manajemen Sekolah</a></div>
         </div>
     </nav>
-    <header class="masthead text-white text-center" style="background: url('assets/img/wp.jpg')no-repeat center center;/*background-size: cover;*//*background-repeat: no-repeat;*/">
+    <header class="masthead text-white text-center" style="background: url('assets/img/sekolah2.png')no-repeat center center;/*background-size: cover;*//*background-repeat: no-repeat;*/">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
