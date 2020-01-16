@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
-<body style="background: url('{{url(asset('assets/img/wp.jpg'))}}');/*background-size: cover;">
+<body style="background: url('{{url(asset('assets/img/sekolah2.png'))}}');/*background-size: cover;">
     <form method="post" action="{{url('user/signup')}}" id="form" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;">
         @csrf
         <div><img class="rounded img-fluid" id="image" style="width: auto;height: auto;margin-left: 30px;margin-bottom: -30px;" src="{{url(asset('assets/img/logo.png'))}}">
