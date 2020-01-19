@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 </head>
 
-<body style="background: url('assets/img/sekolah2.png');/*background-size: cover;">
+<body class="bg-dark">
     <form id="form" method="post" action="{{url('/user/login')}}" style="font-family:Quicksand, sans-serif;background-color:rgba(44,40,52,0.73);width:320px;padding:40px;">
         @csrf
         <div><img class="rounded img-fluid" id="image" style="width: auto;height: auto;margin-left: 30px;" src="{{url(asset("assets/img/logo.png"))}}"></div>

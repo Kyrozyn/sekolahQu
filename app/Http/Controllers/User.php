@@ -42,14 +42,14 @@ class User extends Controller
         if ($request->session()->exists('user')) {
             return redirect('/dashboard');
         }
-        $email = $request->input('email');
-        return view('daftar',['email' => $email]);
+        return view('home.daftar');
     }
 
     function masuk(Request $request){
         if ($request->session()->exists('user')) {
             return redirect('/dashboard');
         }
-        return view('login');
+        return view('home.login');
     }
+
 }

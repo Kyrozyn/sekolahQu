@@ -8,9 +8,7 @@ use Illuminate\Http\Request;
 class Dashboard extends Controller
 {
     function index(){
-        return redirect('dashboard/siswa');
+        return view('dashboard.dashboard');
     }
 
-    function checkLogin($username,$password){
-    }
 }

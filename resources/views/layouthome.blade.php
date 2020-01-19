@@ -6,7 +6,7 @@
 </head>
 
 <body>
-@include('nav')
+@include('navhome')
 <section class="features-icons bg-light" style="padding-top: 20px;padding-bottom: 20px;">
     <div class="container">@yield('content')</div>
 </section>
