@@ -69,7 +69,7 @@ export default class Daftar extends Component {
                                 tooltip: 'Pilih Wilayah',
                                 onClick: (event, rowdata) => {
                                     let hostname = window.location.hostname+":"+window.location.port;
-                                    let url = 'http://'+hostname+'/apisekolah/daerah/'+rowdata.kode_wilayah
+                                    let url = 'https://'+hostname+'/apisekolah/daerah/'+rowdata.kode_wilayah
                                     window.location.href=url
                                 },
                                 options: {actionsColumnIndex: -1}
