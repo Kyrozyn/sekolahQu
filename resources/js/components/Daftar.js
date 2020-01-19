@@ -15,7 +15,7 @@ export default class Daftar extends Component {
     }
     panggilApi() {
         let hostname = window.location.hostname+":"+window.location.port;
-        let url = 'http://'+hostname+'/apisekolah'
+        let url = 'https://'+hostname+'/apisekolah'
         fetch(url)
             .then(response => response.json())
             .then(
