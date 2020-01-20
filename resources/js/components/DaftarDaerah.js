@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Alert from "@material-ui/lab/Alert";
 import MaterialTable from "material-table";
 
-export default class Daftar extends Component {
+export default class DaftarDaerah extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +15,7 @@ export default class Daftar extends Component {
     }
     panggilApi() {
         let hostname = window.location.hostname+":"+window.location.port;
-        let url = 'https://'+hostname+'/apisekolah'
+        let url = 'https://'+hostname+'/apisekolah/daerah/'+this.props.daerah
         fetch(url)
             .then(response => response.json())
             .then(
@@ -57,15 +57,17 @@ export default class Daftar extends Component {
                             actionsColumnIndex: -1
                         }}
                         columns={[
-                            { title: 'Kode Wilayah', field: 'kode_wilayah' },
-                            { title: 'Nama Wilayah', field: 'nama' }
+                            { title: 'Nama Sekolah', field: 'sekolah' },
+                            { title: 'Kecamatan', field: 'kecamatan' },
+                            { title: 'Status', field: 'status' },
+                            { title: 'Alamat', field: 'alamat_jalan' }
                         ]}
                         data = {items}
-                        title ="Silahkan pilih wilayah sekolah anda."
+                        title ="Silahkan pilih sekolah anda."
                         actions={[
                             {
                                 icon: 'check',
-                                tooltip: 'Pilih Wilayah',
+                                tooltip: 'Pilih Sekolah',
                                 onClick: (event, rowdata) => {
                                     let hostname = window.location.hostname+":"+window.location.port;
                                     let url = 'https://'+hostname+'/daftar/daftardaerah/'+rowdata.kode_wilayah
@@ -100,6 +102,7 @@ export default class Daftar extends Component {
     }
 }
 
-if (document.getElementById('daftar')) {
-    ReactDOM.render(<Daftar />, document.getElementById('daftar'));
+if (document.getElementById('daftardaerah')) {
+    var data = document.getElementById('daftardaerah').getAttribute('daerah');
+    ReactDOM.render(<DaftarDaerah daerah={data}/>, document.getElementById('daftardaerah'));
 }

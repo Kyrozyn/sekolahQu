@@ -16,11 +16,13 @@ Route::get('/', function () {
 });
 Route::get("/apisekolah",'ApiSekolah@api');
 Route::get("/apisekolah/daerah/{kodedaerah}",'ApiSekolah@namaSekolah');
+
 Route::get('/masuk', 'User@masuk');
 Route::post('/user/login', 'User@login');
 Route::get('/logout', 'User@logout');
 Route::post('user/signup', 'User@signup');
 Route::match(['get','post'],'/daftar', 'User@daftar');
+Route::match(['get','post'],'/daftar/daftardaerah/{kodedaerah}', 'User@daftardaerah');
 Route::get('/dashboard', 'Dashboard@index');
 Route::get('/daftar/api', 'Dashboard@index');
 Route::group(['middleware' => 'usersession'], function () {
