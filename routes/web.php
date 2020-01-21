@@ -25,6 +25,7 @@ Route::match(['get','post'],'/daftar', 'User@daftar');
 Route::match(['get','post'],'/daftar/daftardaerah/{kodedaerah}', 'User@daftardaerah');
 Route::get('/dashboard', 'Dashboard@index');
 Route::get('/daftar/api', 'Dashboard@index');
+Route::get('/daftar/manual', 'User@daftarmanual');
 Route::group(['middleware' => 'usersession'], function () {
 
 });

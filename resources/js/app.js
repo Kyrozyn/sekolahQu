@@ -14,3 +14,4 @@ require('./bootstrap');
 
 require('./components/Daftar');
 require('./components/DaftarDaerah');
+require('./components/DaftarManual');

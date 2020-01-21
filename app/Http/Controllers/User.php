@@ -52,6 +52,13 @@ class User extends Controller
         return view('home.daftardaerah')->with('daerah',$kodedaerah);
     }
 
+    function daftarmanual(Request $request){
+        if ($request->session()->exists('user')) {
+            return redirect('/dashboard');
+        }
+        return view('home.daftarmanual');
+    }
+
     function masuk(Request $request){
         if ($request->session()->exists('user')) {
             return redirect('/dashboard');

@@ -10,6 +10,6 @@ class ApiSekolah extends Controller
     }
 
     function namaSekolah($kodedaerah){
-        return file_get_contents('http://jendela.data.kemdikbud.go.id/api/index.php/Csekolah/detailSekolahGET?mst_kode_wilayah='.$kodedaerah."&bentuk=sd");
+        return file_get_contents('http://jendela.data.kemdikbud.go.id/api/index.php/Csekolah/detailSekolahGET?mst_kode_wilayah='.$kodedaerah."&bentuk=smp");
     }
 }
