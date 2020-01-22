@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app['request']->server->set('HTTPS', true);
     }
 
     /**
@@ -25,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url)
     {
-
+        URL::forceScheme('https');
     }
 }
