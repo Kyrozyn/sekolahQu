@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('password');
-            $table->integer('NPSN')->references('NPSN')->on('sekolahs');
+            $table->integer('NPSN');
         });
     }
 
