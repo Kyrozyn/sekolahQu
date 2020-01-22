@@ -104,4 +104,10 @@ class Sekolah extends Controller
             return response("errordelete",200   );
         }
     }
+
+    public function sekolah(Request $request){
+        $sekolah = \App\Sekolah::all()->where('NPSN',$request->session()->get('npsn'))->first();
+        $status = $sekolah == 's' ? 'Swasta' : 'Negeri';
+        return view('Sekolah.sekolah',['NPSN' => $request->session()->get('npsn'), 'namasekolah' => $sekolah->namasekolah, 'alamat' => $sekolah->alamat,'status' => $status]);
+    }
 }

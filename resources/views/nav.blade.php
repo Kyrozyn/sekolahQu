@@ -4,7 +4,7 @@
         <ul class="nav navbar-nav">
             <li class="nav-item" role="presentation"><a class="nav-link" href="{{url("dashboard/siswa")}}">Siswa</a></li>
             <li class="nav-item" role="presentation"><a class="nav-link" href="{{url("dashboard/pegawai")}}">Pegawai</a></li>
-{{--            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Kelas</a></li>--}}
+            <li class="nav-item" role="presentation"><a class="nav-link" href="{{url("dashboard/sekolah")}}">Sekolah</a></li>
 {{--            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Absensi</a></li>--}}
 {{--            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Nilai</a></li>--}}
 {{--            <li class="nav-item" role="presentation"><a class="nav-link" href="#">Paket layanan</a></li>--}}

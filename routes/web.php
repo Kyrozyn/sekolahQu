@@ -38,3 +38,4 @@ Route::match(['get','post'],'/daftar/daftarvalidasi/{NPSN}/{namasekolah}/{alamat
 Route::resource('/dashboard/siswa', 'Siswa\\SiswaController');
 
 Route::resource('/dashboard/pegawai', 'Pegawai\\PegawaiController');
+Route::get('/dashboard/sekolah', 'Sekolah@sekolah');
