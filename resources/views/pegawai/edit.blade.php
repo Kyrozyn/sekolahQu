@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout')
 
 @section('content')
     <div class="container">
@@ -25,7 +25,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('pegawai.form', ['formMode' => 'edit'])
+                            @include ('pegawai.form', ['formMode' => 'edit','NPSN' => $NPSN])
 
                         </form>
 

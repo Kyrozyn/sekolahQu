@@ -91,11 +91,11 @@ class PegawaiController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit($id)
+    public function edit($id,Request $request)
     {
         $pegawai = Pegawai::findOrFail($id);
 
-        return view('pegawai.edit', compact('pegawai'));
+        return view('pegawai.edit', compact('pegawai'))->with('NPSN',$request->session()->get('npsn'));
     }
 
     /**
