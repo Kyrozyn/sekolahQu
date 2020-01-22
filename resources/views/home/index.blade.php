@@ -7,7 +7,7 @@
 
 <body>
     @include('navhome')
-    <header class="masthead text-white text-center" style="background: url('assets/img/sekolah2.png')no-repeat center center;background-size: cover;//*background-repeat: no-repeat;*/">
+    <header class="masthead text-white text-center" style="background: url('https://smpuabantul.sch.id/wp-content/themes/study-circle/images/slides/slider-default.jpg')no-repeat center center;background-size: cover;//*background-repeat: no-repeat;*/">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
