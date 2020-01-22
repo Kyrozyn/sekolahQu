@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
 export default class DaftarManual extends Component {
 
     constructor(props) {
@@ -48,6 +49,17 @@ export default class DaftarManual extends Component {
         console.log(event)
         console.log(data)
         console.log(this.state)
+        axios.post('/sekolah', {
+            NPSN: this.state.NPSN,
+            namasekolah: this.state.namasekolah,
+            alamat: this.state.alamat,
+            status: this.state.status,
+        })
+        axios.post('/user/store', {
+            email: this.state.email,
+            password: this.state.password,
+            NPSN: this.state.NPSN
+        }) .then(r => alert('Akun berhasil dibuat!'))
         event.preventDefault();
     }
 

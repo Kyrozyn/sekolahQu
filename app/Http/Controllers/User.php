@@ -66,4 +66,17 @@ class User extends Controller
         return view('home.login');
     }
 
+    public function store(Request $request)
+    {
+        $data = New \App\Users();
+        $data->email = $request->input('email');
+        $data->password = $request->input('password');
+        $data->NPSN = $request->input('NPSN');
+        if($data->save()){
+            return response(['status' => true]);
+        }
+        else{
+            return response(['status' => false]);
+        }
+    }
 }

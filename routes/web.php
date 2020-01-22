@@ -35,3 +35,5 @@ Route::group(['middleware' => 'usersession'], function () {
 Route::group(['middleware' => 'httpsprotocol'], function () {
 
 });
+Route::resource('/sekolah', 'Sekolah');
+Route::post('/user/store','User@store');
