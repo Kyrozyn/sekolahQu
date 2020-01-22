@@ -1,0 +1,66 @@
+{
+    "fields": [
+        {
+            "name": "NIS",
+            "type": "integer"
+        },
+        {
+            "name": "Nama",
+            "type": "string"
+        },
+        {
+            "name": "JenisKelamin",
+            "type": "select",
+            "options": {
+                "l": "Laki-Laki",
+                "p": "Perempuan"
+            }
+        },
+        {
+            "name": "TempatLahir",
+            "type": "string"
+        },
+        {
+            "name": "TanggalLahir",
+            "type": "date"
+        },
+        {
+            "name": "Alamat",
+            "type": "text"
+        },
+        {
+            "name": "NPSN",
+            "type": "integer"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "NPSN",
+            "references": "NPSN",
+            "on": "sekolahs",
+            "onDelete": "cascade"
+        }
+    ],
+    "validations": [
+        {
+            "field": "NIS",
+            "rules": "required|max:8"
+        },
+        {
+            "field": "Nama",
+            "rules": "required"
+        },
+        {
+            "field": "TempatLahir",
+            "rules": "required"
+        },
+        {
+            "field": "TanggalLahir",
+            "rules": "required"
+        },
+        {
+            "field": "Alamat",
+            "rules": "required"
+        }
+    ]
+}

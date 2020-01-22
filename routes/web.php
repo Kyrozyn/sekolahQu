@@ -37,3 +37,6 @@ Route::group(['middleware' => 'httpsprotocol'], function () {
 });
 Route::resource('/sekolah', 'Sekolah');
 Route::post('/user/store','User@store');
+Route::match(['get','post'],'/daftar/daftarvalidasi/{NPSN}/{namasekolah}/{alamat}/{status}','User@daftarvalidasi');
+
+Route::resource('/dashboard/siswa', 'Siswa\\SiswaController');

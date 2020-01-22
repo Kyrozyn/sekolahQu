@@ -6,9 +6,9 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Tambahkan %%modelName%%</div>
+                    <div class="card-header">Tambah Siswa Baru</div>
                     <div class="card-body">
-                        <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/dashboard/siswa') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</button></a>
                         <br />
                         <br />
 
@@ -20,10 +20,10 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/dashboard/siswa') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('%%viewTemplateDir%%.form', ['formMode' => 'create'])
+                            @include ('siswa.siswa.form', ['formMode' => 'create','NPSN' => $NPSN])
 
                         </form>
 

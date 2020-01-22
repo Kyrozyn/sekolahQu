@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class Dashboard extends Controller
 {
     function index(){
-        return view('dashboard.dashboard');
+//        return view('dashboard.dashboard');
+        return redirect('/dashboard/siswa');
     }
 
 }

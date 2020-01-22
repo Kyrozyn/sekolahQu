@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Alert from "@material-ui/lab/Alert";
 import MaterialTable from "material-table";
-
+import axios from "axios";
 export default class DaftarDaerah extends Component {
     constructor(props) {
         super(props);
@@ -69,9 +69,7 @@ export default class DaftarDaerah extends Component {
                                 icon: 'check',
                                 tooltip: 'Pilih Sekolah',
                                 onClick: (event, rowdata) => {
-                                    let hostname = window.location.hostname+":"+window.location.port;
-                                    let url = 'https://'+hostname+'/daftar/daftardaerah/'+rowdata.kode_wilayah
-                                    window.location.href=url
+                                    window.location = '/daftar/daftarvalidasi/'+rowdata.npsn+"/"+rowdata.sekolah+"/"+rowdata.alamat_jalan+"/"+rowdata.status
                                 },
                                 options: {actionsColumnIndex: -1}
                             }

@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-export default class DaftarManual extends Component {
+export default class DaftarValidasi extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            NPSN:  '',
-            namasekolah:  '',
-            alamat: '',
-            status: '',
+            NPSN:  this.props.NPSN ? this.props.NPSN : '',
+            namasekolah:  this.props.namasekolah ? this.props.namasekolah : '',
+            alamat: this.props.alamat ? this.props.alamat : '',
+            status: this.props.status ? this.props.status : '',
             email: '',
             password: '',
         }
@@ -132,6 +132,11 @@ export default class DaftarManual extends Component {
     }
 }
 
-if (document.getElementById('daftarmanual')) {
-    ReactDOM.render(<DaftarManual/>, document.getElementById('daftarmanual'));
+if (document.getElementById('daftarvalidasi')) {
+    var NPSN = document.getElementById('daftarvalidasi').getAttribute('NPSN');
+    console.log("NPSN"+NPSN);
+    var namasekolah = document.getElementById('daftarvalidasi').getAttribute('namasekolah');
+    var alamat = document.getElementById('daftarvalidasi').getAttribute('alamat');
+    var status = document.getElementById('daftarvalidasi').getAttribute('status');
+    ReactDOM.render(<DaftarValidasi NPSN={NPSN} namasekolah={namasekolah} alamat={alamat} status={status}/>, document.getElementById('daftarvalidasi'));
 }

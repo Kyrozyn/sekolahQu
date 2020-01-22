@@ -16,22 +16,11 @@ class User extends Controller
         }
         else{
             $request->session()->put('user',$email);
-            return redirect('/dashboard');
+            $request->session()->put('npsn',$usersDB->NPSN);
+            return redirect('/dashboard/siswa');
         }
     }
 
-    function signup(Request $request){
-        $email = $request->input('email');
-        $password = $request->input('password');
-        $namaSekolah = $request->input('namaSekolah');
-        $user = new Users();
-        $user->email = $email;
-        $user->password = base64_encode($password);
-        $user->namaSekolah = $namaSekolah;
-        $user->save();
-        $request->session()->put('user',$email);
-        return redirect('/dashboard');
-    }
 
     function logout(Request $request){
         $request->session()->flush();
@@ -59,6 +48,13 @@ class User extends Controller
         return view('home.daftarmanual');
     }
 
+    function daftarvalidasi(Request $request,$NPSN,$namasekolah,$alamat,$status){
+        if ($request->session()->exists('user')) {
+            return redirect('/dashboard');
+        }
+        return view('home.daftarvalidasi')->with(["NPSN" => $NPSN,"namasekolah" => $namasekolah,"alamat" => $alamat,"status" => $status]);
+    }
+
     function masuk(Request $request){
         if ($request->session()->exists('user')) {
             return redirect('/dashboard');
@@ -74,7 +70,7 @@ class User extends Controller
         else{
             $data = New \App\Users();
             $data->email = $request->input('email');
-            $data->password = $request->input('password');
+            $data->password = base64_encode($request->input('password'));
             $data->NPSN = $request->input('NPSN');
             if($data->save()){
                 return response(['status' => true]);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class Sekolah extends Controller
@@ -96,6 +97,11 @@ class Sekolah extends Controller
      */
     public function destroy($id)
     {
-        //
+        $nerd = \App\Sekolah::find($id);
+        try {
+            return response($nerd->delete(), 200);
+        } catch (\Exception $e) {
+            return response("errordelete",200   );
+        }
     }
 }
