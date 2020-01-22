@@ -36,3 +36,5 @@ Route::post('/user/store','User@store');
 Route::match(['get','post'],'/daftar/daftarvalidasi/{NPSN}/{namasekolah}/{alamat}/{status}','User@daftarvalidasi');
 
 Route::resource('/dashboard/siswa', 'Siswa\\SiswaController');
+
+Route::resource('/dashboard/pegawai', 'Pegawai\\PegawaiController');

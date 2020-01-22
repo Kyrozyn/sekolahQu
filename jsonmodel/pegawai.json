@@ -1,0 +1,74 @@
+{
+    "fields": [
+        {
+            "name": "NIP",
+            "type": "integer"
+        },
+        {
+            "name": "Nama",
+            "type": "string"
+        },
+        {
+            "name": "JenisKelamin",
+            "type": "select",
+            "options": {
+                "l": "Laki-Laki",
+                "p": "Perempuan"
+            }
+        },
+        {
+            "name": "TempatLahir",
+            "type": "string"
+        },
+        {
+            "name": "TanggalLahir",
+            "type": "date"
+        },
+        {
+            "name": "Alamat",
+            "type": "text"
+        },
+        {
+            "name": "JenisPegawai",
+            "type": "select",
+            "options": {
+                "guru": "Guru",
+                "fungsional": "Fungsional"
+            }
+        },
+        {
+            "name": "NPSN",
+            "type": "integer"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "NPSN",
+            "references": "NPSN",
+            "on": "sekolahs",
+            "onDelete": "cascade"
+        }
+    ],
+    "validations": [
+        {
+            "field": "NIP",
+            "rules": "required|max:20"
+        },
+        {
+            "field": "Nama",
+            "rules": "required"
+        },
+        {
+            "field": "TempatLahir",
+            "rules": "required"
+        },
+        {
+            "field": "TanggalLahir",
+            "rules": "required"
+        },
+        {
+            "field": "Alamat",
+            "rules": "required"
+        }
+    ]
+}
