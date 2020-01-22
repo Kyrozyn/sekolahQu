@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Support\Facades\URL;
+
 Route::get('/', function () {
     return view('home.index');
 });
@@ -30,3 +32,6 @@ Route::group(['middleware' => 'usersession'], function () {
 
 });
 
+Route::group(['middleware' => 'httpsprotocol'], function () {
+
+});
