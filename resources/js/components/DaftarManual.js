@@ -54,12 +54,40 @@ export default class DaftarManual extends Component {
             namasekolah: this.state.namasekolah,
             alamat: this.state.alamat,
             status: this.state.status,
-        })
+        }).catch((error) => {
+            // Error 😨
+            if (error.response) {
+                /*
+                 * The request was made and the server responded with a
+                 * status code that falls out of the range of 2xx
+                 */
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+                if(error.response.data === 'npsnduplicate'){
+                    alert('Sekolah/NPSN sudah terdaftar.')
+                }
+            }
+        });
         axios.post('/user/store', {
             email: this.state.email,
             password: this.state.password,
             NPSN: this.state.NPSN
-        }) .then(r => alert('Akun berhasil dibuat!'))
+        }).then(()=> alert('Anda berhasil daftar.')).catch((error) => {
+                // Error 😨
+                if (error.response) {
+                    /*
+                     * The request was made and the server responded with a
+                     * status code that falls out of the range of 2xx
+                     */
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                    if(error.response.data === 'emailduplicate'){
+                        alert('Email sudah terdaftar.')
+                    }
+                }
+            });
         event.preventDefault();
     }
 

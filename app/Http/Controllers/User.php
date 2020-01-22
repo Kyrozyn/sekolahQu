@@ -68,15 +68,21 @@ class User extends Controller
 
     public function store(Request $request)
     {
-        $data = New \App\Users();
-        $data->email = $request->input('email');
-        $data->password = $request->input('password');
-        $data->NPSN = $request->input('NPSN');
-        if($data->save()){
-            return response(['status' => true]);
+        if (\App\Users::where('email', '=', $request->input('email'))->count() > 0) {
+            return response("emailduplicate",403);
         }
         else{
-            return response(['status' => false]);
+            $data = New \App\Users();
+            $data->email = $request->input('email');
+            $data->password = $request->input('password');
+            $data->NPSN = $request->input('NPSN');
+            if($data->save()){
+                return response(['status' => true]);
+            }
+            else{
+                return response(['status' => false]);
+            }
         }
+
     }
 }

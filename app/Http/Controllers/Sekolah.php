@@ -34,17 +34,23 @@ class Sekolah extends Controller
      */
     public function store(Request $request)
     {
-        $data = New \App\Sekolah();
-        $data->NPSN = $request->input('NPSN');
-        $data->namasekolah = $request->input('namasekolah');
-        $data->alamat = $request->input('alamat');
-        $data->status = $request->input('status');
-        if($data->save()){
-            return response(['status' => true]);
+        if (\App\Sekolah::where('NPSN', '=', $request->input('NPSN'))->count() > 0) {
+            return response("npsnduplicate",403);
         }
         else{
-            return response(['status' => false]);
+            $data = New \App\Sekolah();
+            $data->NPSN = $request->input('NPSN');
+            $data->namasekolah = $request->input('namasekolah');
+            $data->alamat = $request->input('alamat');
+            $data->status = $request->input('status');
+            if($data->save()){
+                return response(['status' => true]);
+            }
+            else{
+                return response(['status' => false]);
+            }
         }
+
     }
 
     /**
