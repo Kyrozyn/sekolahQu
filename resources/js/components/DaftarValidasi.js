@@ -71,8 +71,8 @@ export default class DaftarValidasi extends Component {
                     console.log(error.response.headers);
                     if(error.response.data === 'emailduplicate'){
                         alert('Email sudah terdaftar.')
-                        axios.delete('/sekolah/' + this.state.NPSN).then((response)  => console.log("deleted :"+response.data))
                     }
+                    axios.delete('/sekolah/' + this.state.NPSN).then((response)  => console.log("deleted :"+response.data))
 
                 }
             });

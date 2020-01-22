@@ -31,10 +31,6 @@ Route::get('/daftar/manual', 'User@daftarmanual');
 Route::group(['middleware' => 'usersession'], function () {
 
 });
-
-Route::group(['middleware' => 'httpsprotocol'], function () {
-
-});
 Route::resource('/sekolah', 'Sekolah');
 Route::post('/user/store','User@store');
 Route::match(['get','post'],'/daftar/daftarvalidasi/{NPSN}/{namasekolah}/{alamat}/{status}','User@daftarvalidasi');
