@@ -69,6 +69,7 @@ export default class DaftarDaerah extends Component {
                                 icon: 'check',
                                 tooltip: 'Pilih Sekolah',
                                 onClick: (event, rowdata) => {
+                                    rowdata.alamat_jalan  = rowdata.alamat_jalan.replace("/"," ");
                                     window.location = '/daftar/daftarvalidasi/'+rowdata.npsn+"/"+rowdata.sekolah+"/"+rowdata.alamat_jalan+"/"+rowdata.status
                                 },
                                 options: {actionsColumnIndex: -1}
