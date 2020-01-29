@@ -8,8 +8,6 @@ self.addEventListener('install', function(e) {
                 '/',
                 '/index.php',
                 '/js/app.js',
-                '/dashboard',
-                '/login'
             ]);
         })
     );
